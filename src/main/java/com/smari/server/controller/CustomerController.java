@@ -18,18 +18,18 @@ public class CustomerController {
     CustomerService service;
 
     @PostMapping("/customers")
-    public CustomerModel createBook(@RequestBody CustomerModel model){
+    public CustomerModel Customer(@RequestBody CustomerModel model){
         return service.createCustomer(model);
     }
 
     @PutMapping("/customers/{id}")
     public CustomerModel updateCustomer(@RequestBody CustomerModel model, @PathVariable Long id){
-        CustomerModel book = service.getCustomer(id);
-        if(book == null){
+        CustomerModel customer = service.getCustomer(id);
+        if(customer == null){
             throw new RuntimeException("Not found");
         }
         if(model != null) if (null == model.getId()) {
-            model.setId(book.getId());
+            model.setId(customer.getId());
         }
         return service.updateCustomer(model);
     }
