@@ -35,17 +35,17 @@ public class CustomerController {
     }
 
     @DeleteMapping("/customers/{id}")
-    public void deleteBook(@PathVariable Long id){
+    public void deleteCustomer(@PathVariable Long id){
         service.deleteCustomer(id);
     }
 
     @GetMapping("/customers/{id}")
-    public CustomerModel getBook(@PathVariable Long id){
+    public CustomerModel getCustomer(@PathVariable Long id){
         return service.getCustomer(id);
     }
 
     @GetMapping("/customers")
-    public List<CustomerModel> getAllBooks(){
+    public List<CustomerModel> getAllCustomers(){
         return service.getAllCustomers();
     }
 }
