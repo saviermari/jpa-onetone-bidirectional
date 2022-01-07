@@ -2,10 +2,13 @@ package com.smari.server.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.Serializable;
+
 /**
  * @author smari
  */
-public class CustomerModel {
+public class CustomerModel implements Serializable {
+    private static final long serialVersionUID = 1L;
     private Long id;
     private String firstName;
     private String lastName;
